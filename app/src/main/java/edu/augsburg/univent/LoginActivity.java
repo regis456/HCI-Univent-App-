@@ -3,21 +3,20 @@ package edu.augsburg.univent;
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.annotation.TargetApi;
-import android.content.pm.PackageManager;
-import android.support.annotation.NonNull;
-import android.support.design.widget.Snackbar;
-import android.support.v7.app.AppCompatActivity;
 import android.app.LoaderManager.LoaderCallbacks;
-
 import android.content.CursorLoader;
+import android.content.Intent;
 import android.content.Loader;
+import android.content.pm.PackageManager;
 import android.database.Cursor;
 import android.net.Uri;
 import android.os.AsyncTask;
-
 import android.os.Build;
 import android.os.Bundle;
 import android.provider.ContactsContract;
+import android.support.annotation.NonNull;
+import android.support.design.widget.Snackbar;
+import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
 import android.view.KeyEvent;
 import android.view.View;
@@ -87,6 +86,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
             @Override
             public void onClick(View view) {
                 attemptLogin();
+
             }
         });
 
@@ -317,9 +317,9 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
 
             for (String credential : DUMMY_CREDENTIALS) {
                 String[] pieces = credential.split(":");
-                if (pieces[0].equals(mEmail)) {
+                if (pieces[0].equals(mEmail) || pieces[0].equals("foodbar@gmail.com")) {
                     // Account exists, return true if the password matches.
-                    return pieces[1].equals(mPassword);
+                    return pieces[1].equals("foodbar");
                 }
             }
 
@@ -327,19 +327,20 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
             return true;
         }
 
-        @Override
         protected void onPostExecute(final Boolean success) {
             mAuthTask = null;
             showProgress(false);
-
+            //Tried to get it to load the HomePage and it fails every time.
+            //TODO Get Login Activity to load HomePage
             if (success) {
-                finish();
+                Intent i = new Intent(LoginActivity.this, HomePage.class);
+                startActivity(i);
             } else {
-                mPasswordView.setError(getString(R.string.error_incorrect_password));
-                mPasswordView.requestFocus();
+                Intent i = new Intent(LoginActivity.this, LoginActivity.class);
+                startActivity(i);
             }
+            finish();
         }
-
         @Override
         protected void onCancelled() {
             mAuthTask = null;

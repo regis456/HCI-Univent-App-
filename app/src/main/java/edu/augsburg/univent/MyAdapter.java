@@ -5,6 +5,9 @@ import android.view.LayoutInflater;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+/**
+ * Not useful unless we use a recycler view. Try to use the views in activity_home_page.xml
+ */
 public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
     private String[] mDataset;
 
