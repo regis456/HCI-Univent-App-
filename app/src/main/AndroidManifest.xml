@@ -28,7 +28,8 @@
             android:label="@string/app_name" />
         <activity
             android:name=".VenuesAndArtistsActivity"
-            android:label="@string/app_name"></activity>
+            android:label="@string/app_name" />
+        <activity android:name=".activity_new_user"></activity>
     </application>
 
 </manifest>
