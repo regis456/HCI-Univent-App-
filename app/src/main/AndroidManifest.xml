@@ -25,10 +25,19 @@
         </activity>
         <activity
             android:name=".HomePage"
-            android:label="@string/app_name" />
+            android:label="@string/HomepageActivity" />
         <activity
-            android:name=".VenuesAndArtistsActivity"
-            android:label="@string/app_name"></activity>
+            android:name=".VenueDescription"
+            android:label="@string/VenueActivity"
+            android:parentActivityName=".HomePage" />
+        <activity
+            android:name=".ArtistDescription"
+            android:label="@string/ArtistActivity"
+            android:parentActivityName=".HomePage" />
+        <activity
+            android:name=".SettingsActivity"
+            android:label="@string/title_activity_settings"
+            android:parentActivityName=".HomePage" />
     </application>
 
 </manifest>
