@@ -29,7 +29,12 @@
         <activity
             android:name=".VenueDescription"
             android:label="@string/VenueActivity"
-            android:parentActivityName=".HomePage" />
+            android:parentActivityName=".HomePage">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".HomePage" />
+            />
+        </activity>
         <activity
             android:name=".ArtistDescription"
             android:label="@string/ArtistActivity"

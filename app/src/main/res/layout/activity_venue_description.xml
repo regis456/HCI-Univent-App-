@@ -7,33 +7,24 @@
 
 
     <android.support.v7.widget.Toolbar
-        android:id="@+id/my_toolbar"
+        android:id="@+id/venue_description_toolbar"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
-        android:background="@color/colorPrimary"
+        android:background="@color/colorPrimaryDark"
         android:elevation="4dp"
-        android:theme="@style/Theme.AppCompat.Light"
-        app:popupTheme="@style/CustomTheme"
-        app:title="Artist"
-        app:titleTextColor="@color/cardview_light_background" />
+        android:theme="@style/Theme.Application.Base" />
 
-    <FrameLayout
+    <ImageView
+        android:id="@+id/imageView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/rockman">
-
-    </FrameLayout>
+        app:srcCompat="@drawable/rockman" />
 
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:padding="16dp">
 
-        <ImageView
-            android:id="@+id/imageView4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:srcCompat="@drawable/cards" />
     </FrameLayout>
 
 </LinearLayout>
