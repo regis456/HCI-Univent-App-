@@ -185,4 +185,7 @@
     <string name="SettingsActivity">Settings</string>
     <string name="action_favorite">Favorite</string>
     <string name="title_activity_settings_page">Settings</string>
+
+    <!-- For Venue Descriptions -->
+    <string name="cedar_cult_description">The Cedar Cultural Center ("the Cedar") is a music venue in Cedar-Riverside neighborhood of Minneapolis, Minnesota, United States. It is a non-profit organization and operated by volunteers.</string>
 </resources>
