@@ -2,38 +2,27 @@
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/artist_description_master_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/cardBackground"
     tools:context=".ArtistDescription">
 
-    <android.support.v7.widget.Toolbar
-        android:id="@+id/artist_description_toolbar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/colorPrimaryDark"
-        android:elevation="4dp"
-        android:theme="@style/Theme.Application.Base"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:title="Tekashi 69"
-        app:titleTextColor="#ffffff" />
-
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/tekashi_descrip_pic"
         android:layout_width="0dp"
         android:layout_height="200dp"
+        android:layout_marginTop="8dp"
         android:elevation="2dp"
         android:scaleType="centerCrop"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/artist_description_toolbar"
+        app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/tekashi_six_nine" />
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/header_tekashi_text"
         android:layout_width="wrap_content"
         android:layout_height="47dp"
         android:layout_marginBottom="8dp"
@@ -44,13 +33,13 @@
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
         android:textColor="@android:color/background_light"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView"
+        app:layout_constraintBottom_toBottomOf="@+id/tekashi_descrip_pic"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         tools:text="Tekashi 69" />
 
     <ScrollView
-        android:id="@+id/scrollView2"
+        android:id="@+id/tekashi_scroll_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
@@ -60,16 +49,18 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView"
+        app:layout_constraintTop_toBottomOf="@+id/tekashi_descrip_pic"
         app:layout_constraintVertical_bias="0.0">
 
         <LinearLayout
+            android:id="@+id/tekashi_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
 
             <android.support.v7.widget.CardView
+                android:id="@+id/tekashi_descrip_card"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="@dimen/activity_horizontal_margin"
@@ -80,29 +71,29 @@
                 app:cardCornerRadius="@dimen/cardview_default_radius">
 
                 <android.support.constraint.ConstraintLayout
-                    android:id="@+id/constraintLayout"
+                    android:id="@+id/tekashi_descrip_card_layout"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    app:layout_constraintBottom_toTopOf="@+id/scrollView2"
+                    app:layout_constraintBottom_toTopOf="@+id/tekashi_scroll_view"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.1"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/imageView">
+                    app:layout_constraintTop_toBottomOf="@+id/tekashi_descrip_pic">
 
                     <ImageView
-                        android:id="@+id/imageView2"
+                        android:id="@+id/description_icon"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="8dp"
                         android:layout_marginStart="8dp"
                         android:layout_marginTop="8dp"
-                        app:layout_constraintEnd_toStartOf="@+id/textView4"
+                        app:layout_constraintEnd_toStartOf="@+id/tekashi_descrip_text"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent"
                         app:srcCompat="@mipmap/ic_description_black_24dp" />
 
                     <TextView
-                        android:id="@+id/textView4"
+                        android:id="@+id/tekashi_descrip_text"
                         android:layout_width="258dp"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="8dp"
@@ -118,20 +109,38 @@
             </android.support.v7.widget.CardView>
 
             <android.support.v7.widget.CardView
+                android:id="@+id/tekashi_shatner_card"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="@dimen/activity_horizontal_margin"
                 android:layout_marginRight="@dimen/activity_horizontal_margin"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="8dp"
                 android:background="@android:color/transparent"
                 android:elevation="@dimen/cardview_default_elevation"
+                app:cardBackgroundColor="@drawable/event_cards"
                 app:cardCornerRadius="@dimen/cardview_default_radius">
 
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/event_cards"
-                    android:src="@drawable/event_cards" />
+                <android.support.constraint.ConstraintLayout
+                    android:id="@+id/tekashi_card_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:id="@+id/card_shatner_pic"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:contentDescription="@string/card_description_shatner"
+                        android:src="@drawable/event_cards" />
+
+                    <Button
+                        android:id="@+id/event_info_button_shatner"
+                        android:layout_width="115dp"
+                        android:layout_height="50dp"
+                        android:visibility="invisible"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent" />
+                </android.support.constraint.ConstraintLayout>
+
             </android.support.v7.widget.CardView>
         </LinearLayout>
     </ScrollView>

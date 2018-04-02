@@ -1,23 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".VenueDescription">
-
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <!-- Toolbar for venues description .xml page -->
     <item
         android:id="@+id/action_settings"
         android:icon="@mipmap/ic_menu_black_24dp"
         android:title="@string/action_settings"
-        app:showAsAction="always" />
-    <item
-        android:id="@+id/action_favorite"
-        android:icon="@mipmap/ic_star_border_black_24dp"
-        android:title="@string/action_favorite"
-        app:showAsAction="ifRoom|collapseActionView" />
+        app:showAsAction="ifRoom" />
     <item
         android:id="@+id/action_search"
         android:icon="@mipmap/ic_search_black_24dp"
-        android:title="action_search"
+        android:title="@string/action_search"
         app:actionViewClass="android.support.v7.widget.SearchView"
         app:showAsAction="always" />
 

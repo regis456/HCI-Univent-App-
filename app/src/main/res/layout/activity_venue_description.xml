@@ -2,22 +2,14 @@
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/venue_description_master_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/cardBackground"
     tools:context=".VenueDescription">
 
-    <android.support.v7.widget.Toolbar
-        android:id="@+id/venue_description_toolbar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/colorPrimaryDark"
-        android:elevation="4dp"
-        android:theme="@style/Theme.Application.Base"
-        app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
-
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/cedar_header_pic"
         android:layout_width="0dp"
         android:layout_height="200dp"
         android:elevation="2dp"
@@ -25,11 +17,11 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/venue_description_toolbar"
+        app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/cedar_cultural_center_illustration" />
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/cedar_header_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
@@ -39,12 +31,12 @@
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
         android:textColor="@android:color/background_light"
         android:textStyle="normal|bold"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="@+id/cedar_header_pic"
+        app:layout_constraintStart_toStartOf="@+id/cedar_header_pic"
         tools:text="Cedar Cultural Center" />
 
     <ScrollView
-        android:id="@+id/scrollView2"
+        android:id="@+id/cedar_scroll_view"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginBottom="8dp"
@@ -55,17 +47,20 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView"
-        app:layout_constraintVertical_bias="0.0">
+        app:layout_constraintTop_toBottomOf="@+id/cedar_header_pic">
 
         <LinearLayout
+            android:id="@+id/cedar_linear_layout_card"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
             <android.support.v7.widget.CardView
+                android:id="@+id/cedar_descrip_card"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
                 android:layout_marginTop="8dp"
                 android:background="@color/cardview_light_background"
                 android:elevation="2dp"
@@ -75,26 +70,26 @@
                     android:id="@+id/constraintLayout"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    app:layout_constraintBottom_toTopOf="@+id/scrollView2"
+                    app:layout_constraintBottom_toTopOf="@+id/tekashi_scroll_view"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.1"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/imageView">
+                    app:layout_constraintTop_toBottomOf="@+id/tekashi_descrip_pic">
 
                     <ImageView
-                        android:id="@+id/imageView2"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:id="@+id/cedar_descrip_icon"
+                        android:layout_width="23dp"
+                        android:layout_height="24dp"
                         android:layout_marginEnd="8dp"
                         android:layout_marginStart="8dp"
                         android:layout_marginTop="8dp"
-                        app:layout_constraintEnd_toStartOf="@+id/textView4"
+                        app:layout_constraintEnd_toStartOf="@+id/cedar_descrip_text"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent"
                         app:srcCompat="@mipmap/ic_description_black_24dp" />
 
                     <TextView
-                        android:id="@+id/textView4"
+                        android:id="@+id/cedar_descrip_text"
                         android:layout_width="258dp"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="8dp"
@@ -110,21 +105,39 @@
             </android.support.v7.widget.CardView>
 
             <android.support.v7.widget.CardView
+                android:id="@+id/cedar_shatner_card"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="@dimen/activity_horizontal_margin"
                 android:layout_marginRight="@dimen/activity_horizontal_margin"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="8dp"
                 android:background="@android:color/transparent"
                 android:elevation="@dimen/cardview_default_elevation"
+                app:cardBackgroundColor="@drawable/event_cards"
                 app:cardCornerRadius="@dimen/cardview_default_radius">
 
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/event_cards"
-                    android:src="@drawable/event_cards" />
+                <android.support.constraint.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:id="@+id/card_shatner_pic"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:contentDescription="@string/card_description_shatner"
+                        android:src="@drawable/event_cards" />
+
+                    <Button
+                        android:id="@+id/event_info_button_shatner"
+                        android:layout_width="115dp"
+                        android:layout_height="50dp"
+                        android:visibility="invisible"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent" />
+                </android.support.constraint.ConstraintLayout>
+
             </android.support.v7.widget.CardView>
+
         </LinearLayout>
     </ScrollView>
 
